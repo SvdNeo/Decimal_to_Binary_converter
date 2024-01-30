@@ -6,6 +6,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     convertBtn.addEventListener('click', checkUserInput);
 
-    
+    function checkUserInput() {
+        const inputInt = parseInt(numberInput.value);
+
+        if (!numberInput.value || isNaN(inputInt)) {
+            alert("Please provide a decimal number");
+            return;
+        }
+
+        if (inputInt === 5) {
+            showAnimation();
+        } else {
+            resultOutput.textContent = decimalToBinary(inputInt);
+            numberInput.value = "";
+        }
+    }
+
     
 });
